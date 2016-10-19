@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete from Table</title>
+</head>
+<body>
+<table border="1" id="customers">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    <tr>
+        <td>Eve</td>
+        <td>eve@gmail.com</td>
+    </tr>
+    <tr>
+        <td>Nick</td>
+        <td>nick@yahooo.com</td>
+    </tr>
+    <tr>
+        <td>Didi</td>
+        <td>didi@didi.net</td>
+    </tr>
+    <tr>
+        <td>Tedy</td>
+        <td>tedy@tedy.com</td>
+    </tr>
+</table>
+Email: <input type="text" name="email"/>
+<button onclick="deleteByEmail()">Delete</button>
+<div id="result"/>
+
+<script>
+    function deleteByEmail() {
+        let output = document.getElementById('result');
+        let needle = document.getElementsByName('email')[0].value.trim();
+        let haystack = [...document.querySelectorAll('table tr td:nth-child(2)')]
+                .filter(e => e.textContent == needle);
+        if (haystack.length > 0) {
+            haystack[0].parentNode.parentNode.removeChild(haystack[0].parentNode);
+            output.textContent = 'Deleted.';
+        } else {
+            output.textContent = 'Not found.';
+        }
+    }
+</script>
+</body>
+</html>

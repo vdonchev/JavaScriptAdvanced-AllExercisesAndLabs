@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a.button {
+            border: 1px solid #CCC;
+            background: #EEE;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        a.button.selected {
+            color: #111;
+            font-weight: bold;
+            border: 1px solid #AAA;
+            background: #BBB;
+        }
+
+        a.button.selected::before {
+            content: "\2713\20\20";
+        }
+
+        a:hover {
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body onload="attachEvents()">
+<a class="button">Sofia</a>
+<a class="button">Plovdiv</a>
+<a class="button">Varna</a>
+
+<script>
+    function attachEvents() {
+        $('a').click(select);
+
+        function select() {
+            $('a').each((index, element) => $(element).removeClass('selected'));
+            $(this).addClass('selected');
+        }
+    }
+</script>
+</body>
+</html>
+

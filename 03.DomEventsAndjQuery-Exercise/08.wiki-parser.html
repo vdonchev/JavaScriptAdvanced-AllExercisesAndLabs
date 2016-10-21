@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wiki Parser</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div>
+    <p id="wiki">
+        =Parola=
+        '''Parola''' is a city and a municipal council in ''Jalgaon district'' in the Indian state of [[Maharashtra]]. It is located on the Hajira (Surat)–Dhule–Kolkatta [[NH 6|national highway 6]]. The municipal council was established by the British government before the independence of [[India]].
+        == Geography ==
+        Parola is located at '''20.88N 75.12E'''. It has an average elevation of 261&nbsp;metres (856&nbsp;feet).
+        == Demographics ==
+        As of 2001 India census, Parola had a population of 34,800. Males constitute 52% of the population and females 48%. Parola has an average literacy rate of 69%, higher than the national average of 59.5%: male literacy is 76%, and female literacy is 61%. In Parola, 13% of the population is under 6 years of age.
+    </p>
+</div>
+<script src="08.wiki-parser.js"></script>
+<script>
+    window.onload = function () {
+        wikiParser('#wiki');
+    }
+</script>
+</body>
+</html>

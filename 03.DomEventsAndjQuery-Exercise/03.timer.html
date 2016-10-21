@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+            crossorigin="anonymous"></script>
+    <style>
+        #timer {
+            font-size: 5em;
+        }
+    </style>
+</head>
+<body>
+<div id="timer">
+    <span id="hours" class="timer">00</span>:
+    <span id="minutes" class="timer">00</span>:
+    <span id="seconds" class="timer">00</span>
+    <button id="start-timer">Start</button>
+    <button id="stop-timer">Stop</button>
+</div>
+<script>
+    window.onload = function () {
+        timer();
+    };
+
+    function timer() {
+        let ticking = false;
+        let [s, m, h] = [0, 0, 0];
+        let timeKeeper;
+
+        $('#start-timer').click(startTimer);
+        $('#stop-timer').click(stopTimer);
+
+        function startTimer() {
+            if (!ticking) {
+                timeKeeper = window.setInterval(incrementTime, 1000);
+                ticking = true;
+            }
+        }
+
+        function stopTimer() {
+            clearInterval(timeKeeper);
+            ticking = false;
+        }
+
+        function incrementTime() {
+            let timer = $('#timer');
+
+            s++;
+            s %= 60;
+            timer.find('#seconds').text(s < 10 ? '0' + s : s);
+            if (s == 0) {
+                m++;
+                m %= 60;
+                timer.find('#minutes').text(m < 10 ? '0' + m : m);
+                if (m == 0) {
+                    h++;
+                    h %= 100;
+                    timer.find('#hours').text(h < 10 ? '0' + h : h);
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

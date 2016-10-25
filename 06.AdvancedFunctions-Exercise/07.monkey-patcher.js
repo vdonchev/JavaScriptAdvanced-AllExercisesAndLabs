@@ -18,11 +18,13 @@ function votingSystem(action) {
             if (totalVotes >= 10) {
                 if (that.upvotes / totalVotes > 0.66) {
                     return 'hot';
-                } else if (that.upvotes - that.downvotes >= 0 && that.upvotes > 100 || that.downvotes > 100) {
+                } else if (that.upvotes - that.downvotes >= 0 && (that.upvotes > 100 || that.downvotes > 100)) {
                     return 'controversial';
                 } else if (that.upvotes - that.downvotes < 0) {
                     return 'unpopular';
                 }
+
+                return 'new';
             }
 
             return 'new';

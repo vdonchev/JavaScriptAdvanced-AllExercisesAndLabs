@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bug Tracker</title>
+    <style>
+        #wrapper {
+            width: 800px;
+            border: 1px solid black;
+        }
+
+        #titlebar {
+            background-color: beige;
+            font-size: 2em;
+            padding: 0.5em;
+        }
+
+        .report {
+            margin: 1em;
+            border: 1px solid black;
+            width: 400px;
+        }
+
+        .report .title {
+            background-color: cornflowerblue;
+            color: white;
+            padding: 0.25em;
+            position: relative;
+        }
+
+        .report .body p {
+            margin: 0.5em;
+        }
+
+        .report .title .status {
+            display: inline-block;
+            right: 0px;
+            position: absolute;
+            margin-right: 0.5em;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="08.bug-tracker.js"></script>
+    <script>
+        $(document).ready(function () {
+            let manager = generateBugManager();
+            manager.output('#content');
+            manager.report('kiwi', 'judge rip', true, 5);
+            manager.report('lemon', 'judge rip ^ 2', false, 18);
+            manager.report('apple', 'judge rip?', true, 155);
+        })
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="titlebar">Bug tracker</div>
+    <div id="content"></div>
+</div>
+</body>
+</html>

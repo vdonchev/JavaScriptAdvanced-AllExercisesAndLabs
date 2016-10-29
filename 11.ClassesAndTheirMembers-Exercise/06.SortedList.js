@@ -32,9 +32,3 @@ class SortedList {
         this.storage = this.storage.sort((a, b) => a - b);
     }
 }
-
-let l = new SortedList();
-l.add(5);
-l.add(3);
-l.add(2);
-console.log(l.storage);

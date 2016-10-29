@@ -62,7 +62,5 @@ let result = (function () {
         }
     }
 
-    return {
-        Textbox: TextBox,
-        Form: Form};
+    return {Textbox: TextBox, Form: Form};
 })();

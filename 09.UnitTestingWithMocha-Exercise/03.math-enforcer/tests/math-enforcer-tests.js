@@ -2,7 +2,7 @@ let mathEnforcer = require('../math-enforcer').mathEnforcer;
 let expect = require('chai').expect;
 
 describe('test cases for mathEnforcer object', function () {
-    describe('test cases for addFive(num) function', function () {
+    describe('test cases for addFive(nums) function', function () {
         it('should return undefined on addFive("2")', () => {
             expect(mathEnforcer.addFive("2")).to.equal(undefined);
         });
@@ -28,7 +28,7 @@ describe('test cases for mathEnforcer object', function () {
         });
     });
 
-    describe('test cases for subtractTeb(num) function', function () {
+    describe('test cases for subtractTeb(nums) function', function () {
         it('should return undefined on subtractTen("2")', () => {
             expect(mathEnforcer.subtractTen("2")).to.equal(undefined);
         });

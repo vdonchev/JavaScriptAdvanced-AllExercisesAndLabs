@@ -1,0 +1,8 @@
+{
+  "name": "people-and-posts",
+  "description": "exercise problem solution",
+  "version": "0.0.1",
+  "dependencies": {
+    "systemjs": "^0.19.40"
+  }
+}

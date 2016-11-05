@@ -1,0 +1,7 @@
+{
+  "name": "modular-dom",
+  "version": "0.0.1",
+  "dependencies": {
+    "systemjs": "^0.19.40"
+  }
+}
